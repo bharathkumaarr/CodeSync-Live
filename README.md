@@ -27,3 +27,4 @@ Create a platform where multiple users can edit code together in real-time, exec
 - Voice/video chat integration (WebRTC or a service like Agora).
 - Syntax highlighting.
 - Room-based permissions and user management.
+
