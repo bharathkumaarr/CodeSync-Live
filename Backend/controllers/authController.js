@@ -16,7 +16,7 @@ const signup = async (req,res)=>{
 
 
         const token = jwt.sign(
-            {id: user.__id}, 
+            {id: user._id}, 
             process.env.JWT_SECRET, 
             {expiresIn: '1d'})
 
@@ -37,7 +37,7 @@ const login = async (req,res)=>{
         if (!isMatch) return res.status(400).json({error: 'invalid password'});
 
         const token = jwt.sign(
-            {if: user.__id},
+            {id: user._id},
             process.env.JWT_SECRET,
             {expiresIn:'1d'}
         )
