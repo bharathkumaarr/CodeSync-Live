@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 require('dotenv').config();
 
+const http = require('http');
+const {Server} = require('socket.io')
+
 const connectDB = require('./config/db')
 const authRoutes = require('./routes/auth')
 const roomRoutes = require('./routes/rooms')
@@ -15,11 +18,24 @@ app.use('/api/auth', authRoutes)
 app.use('/api/rooms', roomRoutes)
 
 
-
-
 connectDB();
 
-app.listen(port, ()=>{
-    console.log(`server running on port ${port}`)
+
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors:{
+        origin: '*',
+        methods: ['GET', 'POST'],
+    },
 })
 
+io.on('connection', (socket)=>{
+    console.log('a user is connected: ', socket.id);
+    socket.on('disconnect',()=>{
+        console.log('User disconnected:', socket.id);
+    });
+})
+
+server.listen(port, ()=>{
+    console.log(`server running on port ${port}`)
+})
