@@ -8,9 +8,11 @@ Create a platform where multiple users can edit code together in real-time, exec
 - Express.js, 
 - MongoDB, 
 - Socket.io, 
-- Redis (session management), 
-- Docker (sandboxed code execution).
-- ot library (operational transformation for conflict resolution in real-time editing)
+- ot library (operational transformation for conflict resolution in real-time editing),
+- Docker (sandboxed code execution),
+- branching (version control),
+- WebRTC (voice/ video chat),
+- Redis (session management, optimisations, backend security).
 
 #### Frontend
 - React,
@@ -19,9 +21,10 @@ Create a platform where multiple users can edit code together in real-time, exec
 
 
 ## Features
-- Multi-user real-time editing.
-- Live code execution in sandboxed containers.
-- Voice/video chat integration (WebRTC or a service like Agora).
-- Syntax highlighting.
-- Room-based permissions and user management.
+- [x] Room-based permissions and user management.
+- [x] Multi-user real-time editing.
+- [ ] Live code execution in sandboxed containers.
+- [ ] Version Control, branching
+- [ ] Voice/video chat integration (WebRTC).
+
 
