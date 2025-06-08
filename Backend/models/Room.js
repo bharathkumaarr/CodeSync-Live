@@ -35,6 +35,22 @@ const roomSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
      },
+     version: {
+        type: Number,
+        default: 0,
+    },
+    operations: [{
+        operation: {
+            type: String, //json-stringified ot operation
+        },
+        version: {
+            type: Number,
+        },
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+    }],
 });
 
 
