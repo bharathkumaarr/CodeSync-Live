@@ -10,6 +10,7 @@ Create a platform where multiple users can edit code together in real-time, exec
 - Socket.io, 
 - Redis (session management), 
 - Docker (sandboxed code execution).
+- ot library (operational transformation for conflict resolution in real-time editing)
 
 #### Frontend
 - React,
